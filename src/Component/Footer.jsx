@@ -1,14 +1,11 @@
 import React from 'react';
-import { FaLocationDot } from "react-icons/fa6";
-import { MdOutlineMailOutline } from "react-icons/md";
-import { IoCall } from "react-icons/io5";
 import { FaTwitter } from "react-icons/fa";
 import { FaBehance } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
 import { FaPinterestP } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 
-function Footer() {
+function Footer(props) {
   return (
     <>
         <footer>
@@ -18,33 +15,23 @@ function Footer() {
             <p>We’re available for the new projects</p>
           </div>
           <div className='contact-details'>
-            <div className='detail'>
-              <div className='icon'>
-                <IoCall />
-              </div>
-              <div>
-                <h1>Call Us</h1>
-                <p>+61 383 767 284</p>
-              </div>
-            </div>
-            <div className='detail'>
-              <div className='icon'>
-                <FaLocationDot />
-              </div>
-              <div>
-                <h1>Address</h1>
-                <p>245 Quigley Blvd, Ste K</p>
-              </div>
-            </div>
-            <div className='detail'>
-              <div className='icon'>
-                <MdOutlineMailOutline />
-              </div>
-              <div>
-                <h1>Email</h1>
-                <p>support@bestlooker.pro</p>
-              </div>
-            </div>
+            {
+              props.foot.map((item)=>{
+                return (
+                  <>
+                    <div className='detail'>
+                      <div className='icon'>
+                        {item.icon}
+                      </div>
+                      <div>
+                        <h1>{item.title}</h1>
+                        <p>{item.data}</p>
+                      </div>
+                    </div>
+                  </>
+                )
+              })
+            }
           </div>
         </section>
         <section className='container section2 spacer'>

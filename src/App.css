@@ -2,7 +2,7 @@ a{
   text-decoration: none;
   color: white;
 }
-.container{
+.containerr{
   padding: 0 30px;
 }
 ul{
@@ -110,7 +110,6 @@ img{
 }
 .section4 .row1, .row2 {
   display: flex;
-  flex-wrap:wrap;
   justify-content: space-around;
   text-align: center;
 }
@@ -168,6 +167,20 @@ img{
   padding-top: 80px;
   padding-bottom: 0px;
 }
+.section6 .flex{
+  display: flex;
+  justify-content: space-around;
+}
+.section6 .flex .count-dsc{
+  color: rgb(97, 97, 97);
+}
+.section6 .blog-img{
+  height: 300px;
+  width: 430px;
+}
+.section6 p{
+  padding-right: 13px;
+}
  button{
   color: black;
   background-color: white;
@@ -194,6 +207,12 @@ footer .icon{
 footer .section1 .text{
   text-align: center;
 }
+.text h1{
+  font-size: 40px;
+}
+.text p{
+  padding-bottom: 30px;
+}
 footer .section2 {
   background-color: black;
   color: white;
@@ -212,4 +231,77 @@ footer .section2 div p{
 }
 .footer-text{
   text-align: center;
+}
+.title{
+  text-align: left;
+  background-color: black;
+  color: white;
+  height: 300px;
+  padding-left: 40px;
+}
+.title > small{
+  display: block;
+  color: white;
+  opacity: .7;
+  font-size: 20px;
+  font-weight: 400;
+}
+.title > h1{
+  margin-top: 0%;
+  font-size: 60px;
+  padding-top: 50px;
+}
+.elem-1 {
+  display: grid;
+  grid-template-columns: repeat(2,50%);
+  padding:0 40px;
+}
+.elem-2 {
+  display: grid;
+  grid-template-columns: repeat(3,33.33%);
+  padding:0 40px;
+}
+.elem-3 {
+  display: grid;
+  grid-template-columns: repeat(4,25%);
+  padding:0 40px;
+}
+.elem-data{
+  color: gray;
+  padding-right: 10px;
+}
+.port{
+  display: grid;
+  grid-template-columns: repeat(3,33.33%);
+  padding: 0 40px;
+}
+.port div,p{
+  padding: 0 20px;
+}
+.port p{
+  font-size: large;
+}
+.port div table{
+  border-color: lightgray;
+  width: 80%;
+}
+.port div table td{
+  text-align: center;
+}
+.shopping-grid {
+  display: grid;
+  grid-template-columns: repeat(4,25%);
+  padding: 0 40px;
+}
+.cart-btn{
+  color: white;
+  background-color: black;
+  border-radius: 0%;
+  font-size: small;
+}
+.cart-text{
+  text-align: center;
+}
+.cart-text button{
+ margin-top: 0;
 }

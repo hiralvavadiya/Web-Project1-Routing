@@ -1,27 +1,15 @@
-import { BsFillBagDashFill } from "react-icons/bs";
-import { FaHeart } from "react-icons/fa";
-import { FaCoffee } from "react-icons/fa";
-import { FaLightbulb } from "react-icons/fa6";
 import { MdCelebration } from "react-icons/md";
 import { RiComputerLine } from "react-icons/ri";
 import { FaRegFileAlt } from "react-icons/fa";
 import { GrTask } from "react-icons/gr";
 import { BsBricks } from "react-icons/bs";
 import { TbTargetArrow } from "react-icons/tb";
-import { FaLocationDot } from "react-icons/fa6";
-import { MdOutlineMailOutline } from "react-icons/md";
-import { IoCall } from "react-icons/io5";
-import { FaTwitter } from "react-icons/fa";
-import { FaBehance } from "react-icons/fa";
-import { FaFacebookF } from "react-icons/fa";
-import { FaPinterestP } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa";
-import React from 'react'
+import React from 'react';
 
-function Home() {
+function Home(props) {
   return (
     <div>
-        <section className='section1'>
+      <section className='section1'>
         <img src={require('../image/home-bg.jpeg')}/>
         <div className='img-text'>
           <p>The Design Makers</p>
@@ -43,36 +31,22 @@ function Home() {
 
       <section className='section3 container spacer'>
         <div className='cnt-box'>
-          <div>
-            <div className='number-count'>320</div>
-            <div className='count-desc'>
-              <BsFillBagDashFill />
-              <span>Projects Done</span>
-            </div>
-          </div>
-          <div>
-            <div className='number-count'>150</div>
-            <div className='count-desc'>
-              <FaHeart />
-              <span>Happy Clients</span>
-            </div>
-          </div>
-          <div>
-            <div className='number-count'>933</div>
-            <div className='count-desc'>
-              <FaCoffee />
-              <span>Coffee Cups</span>
-            </div>
-          </div>
-          <div>
-            <div className='number-count'>975</div>
-            <div className='count-desc'>
-              <FaLightbulb />
-              <span>Great Ideas</span>
-            </div>
-          </div>
+          {
+            props.demo.map((item)=>{
+              return(
+                <div>
+                  <div className='number-count'>{item.no}</div>
+                  <div className='count-desc'>
+                  {item.icon}
+                  <span>{item.data}</span>
+                  </div>
+                </div>
+              )
+            })
+          }
         </div>
       </section>
+      {/* <Counter></Counter> */}
 
       <hr color='grey'></hr>
 
@@ -81,7 +55,7 @@ function Home() {
           <h1>Our Services</h1>
           <p>We provide the best digital solutions.</p>
         </div>
-        <div className='services'>
+        <div className='services spacer'>
           <div className='row1'>
             <div>
               <MdCelebration className='servce-icon'/>
@@ -143,7 +117,33 @@ function Home() {
       </div>
       </section>
 
+      <section className="section6 spacer container">
+        <div className='serice-text'>
+          <h1>Our Blog</h1>
+          <p>The latest news in our blog</p>
+        </div>
 
+        <div className="flex">
+          {
+            props.blog.map((item)=>{
+              return (
+                <>
+                  <div >
+                    <div className="blog-img">
+                      <img src={item.img}/>
+                    </div>
+                      <div className='count-dsc'>
+                        <h3>{item.title}</h3>
+                        <small>{item.name}</small>
+                        <p>{item.info}</p>
+                      </div>
+                  </div>
+                </>
+              )
+            })
+          }
+        </div>
+      </section>
       
     </div>
   )
